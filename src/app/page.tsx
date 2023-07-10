@@ -1,9 +1,7 @@
-import styles from "./page.module.css";
+"use client";
 
-export default async function Home() {
-  return (
-    <main className={styles.main}>
-      <div>Welcome</div>
-    </main>
-  );
+import styles from "@/app/page.module.css";
+
+export default function Home() {
+  return <main className={styles.main}>Home</main>;
 }
