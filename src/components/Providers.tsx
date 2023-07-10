@@ -13,6 +13,7 @@ const themeOptions: ThemeOptions = {
     secondary: {
       main: "#00eef3",
     },
+    background: { paper: "#642567" },
   },
 };
 

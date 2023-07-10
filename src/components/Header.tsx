@@ -49,7 +49,16 @@ export default function Header() {
             <MenuIcon />
           </IconButton> */}
           <Link href="/" style={{ flexGrow: 1 }}>
-            <Typography variant="h6" component="div">
+            <Typography
+              sx={{
+                fontFamily: "Space Mono",
+                fontWeight: "700",
+                fontStyle: "italic",
+                textShadow: "0.1em 0.1em 0 hsl(200 50% 30%)",
+              }}
+              variant="h6"
+              component="div"
+            >
               Galaxy Casino
             </Typography>
           </Link>
@@ -70,7 +79,6 @@ export default function Header() {
                     aria-haspopup="true"
                     onClick={handleMenu}
                     color="inherit"
-                    // onClick={() => router.push("/profile")}
                   >
                     <AccountCircle />
                   </IconButton>
