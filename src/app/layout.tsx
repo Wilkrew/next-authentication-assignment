@@ -3,13 +3,11 @@ import type { Metadata } from "next";
 import { Inter, Space_Mono } from "next/font/google";
 
 import Header from "@/components/Header";
-
-import Header from "@/components/Header";
 import Providers from "@/components/Providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
-const spaceMono = Space_Mono({ weight: ["400", "700"] });
+// const spaceMono = Space_Mono({subsets: ["latin"], weight: ["400", "700"] });
 
 export const metadata: Metadata = {
   title: "Galaxy Casino",

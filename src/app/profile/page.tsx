@@ -1,6 +1,5 @@
 "use client";
 
-import { redirect } from "next/navigation";
 import { useSession } from "next-auth/react";
 
 import styles from "@/app/page.module.css";
@@ -8,9 +7,6 @@ import styles from "@/app/page.module.css";
 export default function Profile() {
   const { data: session } = useSession({
     required: true,
-    onUnauthenticated() {
-      redirect("/signin?callbackUrl=/profile");
-    },
   });
 
   return (
