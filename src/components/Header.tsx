@@ -58,7 +58,7 @@ export default function Header() {
               fontStyle: "italic",
               textShadow: "0.07em 0.07em 0 hsl(200 50% 30%)",
             }}
-            variant="h6"
+            variant="h5"
             component="div"
           >
             Galaxy Casino
