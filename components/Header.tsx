@@ -92,24 +92,29 @@ export default function Header() {
           <>
             {session.user.image ? (
               <>
-                <Avatar
-                  alt={session.user.name ? session.user.name : "User"}
-                  src={session.user.image}
-                  aria-label="account of current user"
+                <IconButton
                   aria-controls="menu-appbar"
                   aria-haspopup="true"
+                  aria-label="account of current user"
                   onClick={handleMenu}
-                />
+                  size="large"
+                >
+                  <Avatar
+                    alt={session.user.name ? session.user.name : "User"}
+                    src={session.user.image}
+                  />
+                </IconButton>
+
                 <UserMenu />
               </>
             ) : (
               <>
                 <IconButton
-                  size="large"
-                  aria-label="account of current user"
                   aria-controls="menu-appbar"
                   aria-haspopup="true"
+                  aria-label="account of current user"
                   onClick={handleMenu}
+                  size="large"
                   color="inherit"
                 >
                   <AccountCircle />
