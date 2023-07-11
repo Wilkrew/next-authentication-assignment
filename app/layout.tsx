@@ -1,20 +1,17 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 
-import Header from "@/components/Header";
-import Providers from "@/components/Providers";
-
-const inter = Inter({ subsets: ["latin"] });
+import Header from "../components/Header";
+import Providers from "../components/Providers";
 
 export const metadata: Metadata = {
   title: "Galaxy Casino",
   description: "The best casino in the galaxy",
   applicationName: "Galaxy Casino",
-  //FIXME: Something does not work properly with the icons
+  //FIXME: Something does not work properly with the public folder
   icons: {
     icon: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
+    apple: "/applce-touch-icon.png",
   },
 };
 
@@ -25,7 +22,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </head>
-      <body className={inter.className}>
+      <body>
         <Providers>
           <Header />
           {children}
