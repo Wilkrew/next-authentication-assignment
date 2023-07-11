@@ -1,22 +1,22 @@
 "use client";
-import { createContext, useContext, useState } from "react";
-
 import { signIn, signOut, useSession } from "next-auth/react";
+import { useContext, useState } from "react";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 import {
   AppBar,
-  Toolbar,
-  IconButton,
-  Typography,
-  Button,
   Avatar,
+  Button,
+  IconButton,
   Menu,
   MenuItem,
+  Toolbar,
+  Typography,
   useTheme,
 } from "@mui/material";
-import { useRouter } from "next/navigation";
 import { AccountCircle, Brightness7, Brightness4 } from "@mui/icons-material";
-import Link from "next/link";
+
 import { ColorModeContext } from "./Providers";
 
 export default function Header() {
@@ -45,13 +45,34 @@ export default function Header() {
     router.push(path);
   };
 
+  const UserMenu = () => {
+    return (
+      <Menu
+        id="menu-appbar"
+        anchorEl={anchorEl}
+        anchorOrigin={{
+          vertical: "top",
+          horizontal: "right",
+        }}
+        keepMounted
+        transformOrigin={{
+          vertical: "top",
+          horizontal: "right",
+        }}
+        open={Boolean(anchorEl)}
+        onClose={handleClose}
+      >
+        <MenuItem onClick={() => handleRoute("/profile")}>Profile</MenuItem>
+        <MenuItem onClick={() => handleSignOut()}>Sign out</MenuItem>
+      </Menu>
+    );
+  };
+
   return (
     <AppBar position="fixed">
       <Toolbar>
-        {/* <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
-            <MenuIcon />
-          </IconButton> */}
         <Link href="/" style={{ flexGrow: 1 }}>
+          {/* TODO: Fix proper logo */}
           <Typography
             sx={{
               fontWeight: "700",
@@ -79,24 +100,7 @@ export default function Header() {
                   aria-haspopup="true"
                   onClick={handleMenu}
                 />
-                <Menu
-                  id="menu-appbar"
-                  anchorEl={anchorEl}
-                  anchorOrigin={{
-                    vertical: "top",
-                    horizontal: "right",
-                  }}
-                  keepMounted
-                  transformOrigin={{
-                    vertical: "top",
-                    horizontal: "right",
-                  }}
-                  open={Boolean(anchorEl)}
-                  onClose={handleClose}
-                >
-                  <MenuItem onClick={() => handleRoute("/profile")}>Profile</MenuItem>
-                  <MenuItem onClick={() => handleSignOut()}>Sign out</MenuItem>
-                </Menu>
+                <UserMenu />
               </>
             ) : (
               <>
@@ -110,24 +114,7 @@ export default function Header() {
                 >
                   <AccountCircle />
                 </IconButton>
-                <Menu
-                  id="menu-appbar"
-                  anchorEl={anchorEl}
-                  anchorOrigin={{
-                    vertical: "top",
-                    horizontal: "right",
-                  }}
-                  keepMounted
-                  transformOrigin={{
-                    vertical: "top",
-                    horizontal: "right",
-                  }}
-                  open={Boolean(anchorEl)}
-                  onClose={handleClose}
-                >
-                  <MenuItem onClick={() => handleRoute("/profile")}>Profile</MenuItem>
-                  <MenuItem onClick={() => handleSignOut()}>Sign out</MenuItem>
-                </Menu>
+                <UserMenu />
               </>
             )}
           </>

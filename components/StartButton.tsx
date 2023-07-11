@@ -9,7 +9,7 @@ export default function StartButton() {
   return (
     <>
       {session?.user ? (
-        <Button variant="contained" onClick={() => console.log("Do something")}>
+        <Button variant="contained" onClick={() => console.log("Route to main content")}>
           Start your adventure
         </Button>
       ) : (

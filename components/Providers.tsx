@@ -1,9 +1,8 @@
 "use client";
+import { createContext, useMemo, useState } from "react";
 
 import { SessionProvider } from "next-auth/react";
-
 import { ThemeProvider, createTheme } from "@mui/material";
-import { createContext, useMemo, useState } from "react";
 
 export const ColorModeContext = createContext({ toggleColorMode: () => {} });
 

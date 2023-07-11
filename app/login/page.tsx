@@ -1,4 +1,4 @@
-import StartButton from "@/components/StartButton";
+import StartButton from "../../components/StartButton";
 import styles from "@/app/page.module.css";
 
 export default async function Login() {

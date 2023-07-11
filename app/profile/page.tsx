@@ -1,23 +1,18 @@
 "use client";
 
+import styles from "@/app/page.module.css";
 import { useSession } from "next-auth/react";
 
-import styles from "@/app/page.module.css";
-import { Box, List, ListItem, ListItemText, ListItemIcon, Typography, Paper } from "@mui/material";
+import { Box, List, ListItem, ListItemIcon, ListItemText, Paper, Typography } from "@mui/material";
 import { Email } from "@mui/icons-material";
-import { useTheme } from "@emotion/react";
 
 export default function Profile() {
   const { data: session } = useSession({
     required: true,
   });
 
-  const theme = useTheme();
-
-  console.log(theme);
-
   return (
-    <main className={`${styles.main}`}>
+    <main className={styles.main}>
       {session?.user?.name && session.user.email && (
         <Box
           sx={{
