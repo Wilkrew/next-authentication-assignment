@@ -8,7 +8,6 @@ export const metadata: Metadata = {
   title: "Galaxy Casino",
   description: "The best casino in the galaxy",
   applicationName: "Galaxy Casino",
-  //FIXME: Something does not work properly with the public folder
   icons: {
     icon: "/favicon.ico",
     apple: "/applce-touch-icon.png",
