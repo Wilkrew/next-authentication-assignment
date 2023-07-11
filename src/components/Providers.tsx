@@ -31,13 +31,62 @@ export default function Providers({ children }: { children: React.ReactNode }) {
           },
         },
         components: {
+          MuiAppBar: {
+            styleOverrides: {
+              root: {
+                color: "#fcc4ff",
+                boxShadow: "rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px",
+                borderRadius: "0px 0px 20px 20px",
+              },
+            },
+          },
+          MuiTypography: {
+            variants: [
+              {
+                props: { variant: "h1" },
+                style: {
+                  fontFamily: "Space Mono",
+                },
+              },
+              {
+                props: { variant: "h2" },
+                style: {
+                  fontFamily: "Space Mono",
+                },
+              },
+              {
+                props: { variant: "h3" },
+                style: {
+                  fontFamily: "Space Mono",
+                },
+              },
+              {
+                props: { variant: "h4" },
+                style: {
+                  fontFamily: "Space Mono",
+                },
+              },
+              {
+                props: { variant: "h5" },
+                style: {
+                  fontFamily: "Space Mono",
+                },
+              },
+              {
+                props: { variant: "h6" },
+                style: {
+                  fontFamily: "Space Mono",
+                },
+              },
+            ],
+          },
           MuiButton: {
             variants: [
               {
                 props: { variant: "contained" },
                 style: {
                   borderRadius: "20px",
-                  padding: "12px 24px",
+                  padding: "0.75rem 1.5rem",
                 },
               },
             ],
