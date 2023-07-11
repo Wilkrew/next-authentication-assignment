@@ -10,8 +10,8 @@ export const metadata: Metadata = {
   applicationName: "Galaxy Casino",
   //FIXME: Something does not work properly with the public folder
   icons: {
-    icon: "/../public/favicon.ico",
-    apple: "/../public/apple-touch-icon.png",
+    icon: "/favicon.ico",
+    apple: "/applce-touch-icon.png",
   },
 };
 
@@ -19,7 +19,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
-        {/* <link rel="icon" href="/favicon.ico" /> */}
+        <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </head>
       <body>
