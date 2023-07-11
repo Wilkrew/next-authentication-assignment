@@ -23,10 +23,9 @@ export default function Profile() {
           sx={{
             padding: "30px",
             borderRadius: "20px",
-            bgcolor: "background.default",
-            boxShadow: "rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px",
           }}
           component={Paper}
+          elevation={5}
         >
           <Typography
             sx={{
@@ -42,9 +41,12 @@ export default function Profile() {
 
           <Typography variant="h5">Profile</Typography>
           <List>
-            <ListItem sx={{ bgcolor: "primary.main", borderRadius: "15px" }} component={Paper}>
+            <ListItem
+              sx={{ bgcolor: "primary.main", color: "#fff", borderRadius: "15px" }}
+              component={Box}
+            >
               <ListItemIcon>
-                <Email />
+                <Email sx={{ color: "#fff" }} />
               </ListItemIcon>
               <ListItemText>{session.user.email}</ListItemText>
             </ListItem>
