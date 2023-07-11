@@ -15,6 +15,7 @@ The site is built using the Next.js framework, which combines server-side render
 - Unique instances of component variants are created by overriding their default theme styles by using their built in "sx" attribute to further promote ease of maintenance.
 - The layout of the website is resolved via the new "layout" solution in Next.js that allows us to set a page layout template used for all page instances, thereby reducing duplicated code, maintenance and possible issues with inconcistency.
 - Basic global styles affecting overall structure above lesser component level, i.e at the `<main></main>` tag are set via a CSS Module for all pages. Native base elements like `<body></body>` and "all" selector `*` are set via normal native `global.css`
+- For icons the Material UI Icons library is used
 
 ### 3. Functionality:
 
